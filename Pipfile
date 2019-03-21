@@ -8,10 +8,11 @@ python-language-server = "*"
 ipdb = "*"
 pytest-django = "*"
 pytest-watch = "*"
-black = "==18.9b0"
+black = "==19.3b0"
 pylint = "*"
 coverage = "*"
 pytest-cov = "*"
+pyls-black = "==0.4.0"
 
 [packages]
 psycopg2 = "*"
@@ -21,3 +22,6 @@ django-heroku = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
