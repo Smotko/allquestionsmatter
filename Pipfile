@@ -13,10 +13,10 @@ pylint = "*"
 coverage = "*"
 pytest-cov = "*"
 
-
-
 [packages]
 django = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
