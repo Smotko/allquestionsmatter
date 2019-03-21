@@ -1,5 +1,3 @@
-# All Questions Matter
+# Rooted
 
 ## Pixels.camp hackhaton project
-
-
