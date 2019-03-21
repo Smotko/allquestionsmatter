@@ -14,6 +14,7 @@ coverage = "*"
 pytest-cov = "*"
 
 [packages]
+psycopg2 = "*"
 django = "*"
 gunicorn = "*"
 django-heroku = "*"
