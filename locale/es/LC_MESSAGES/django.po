@@ -20,24 +20,24 @@ msgstr ""
 
 #: index/templates/index/question.html:18
 msgid "Answers"
-msgstr ""
+msgstr "Respuestas"
 
 #: index/templates/index/question.html:19
 msgid "Answer"
-msgstr ""
+msgstr "Respuesta"
 
 #: index/templates/index/question_form.html:8
 msgid "Question title"
-msgstr ""
+msgstr "Encabezado de la pregunta"
 
 #: index/templates/index/question_form.html:9
 msgid "Question content"
-msgstr ""
+msgstr "Descripión de la pregunta"
 
 #: index/templates/index/questions.html:6
 msgid "Top 5 Questions"
-msgstr ""
+msgstr "Top 5 de preguntas"
 
 #: index/templates/index/questions.html:30
 msgid "Question"
-msgstr ""
+msgstr "Pregunta"
