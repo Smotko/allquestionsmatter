@@ -108,6 +108,26 @@ a {
         color: var(--color-dark);
     }
 
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    display: flex;
+    position: fixed;
+    width: 90%;
+    height: 35px;
+    border-radius: 7px;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-std);
+    padding: 5px;
+    margin-left: 8px;
+    justify-content: left;
+}
+
+    .search-bar .placeholder {
+        align-self: center;
+        margin-left: 10px;
+        color: var(--color-gray);
+    }
+
 /* ===== MAIN CONTENT ===== */
 .main {
     margin-top: 60px;
@@ -127,15 +147,15 @@ a {
 
             .list-item:hover {
                 background-color: var(--color-dark);
-                color: var(--color-bright);
+                text-emphasis-color: var(--color-bright);
                 font-weight: 700;
             }
 
 /* ===== CARDS ===== */
 .card-container {
-    display: flex;
+    display: block;
     width: 100%;
-    justify-content: center;
+    margin-left: 8px;
 }
 
 .card {
@@ -143,10 +163,12 @@ a {
     border-radius: 7px;
     box-shadow: var(--shadow-std);
     width: 95%;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
     .card-info {
-        padding: 10px;
+        padding: 5px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -154,8 +176,30 @@ a {
     }
 
         .card-votes {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
             width: 15%;
         }
+
+        .card-votes p {
+            margin: 0px;
+            font-size: 10px;
+            align-self: center;
+        }
+
+        .upvote, 
+        .downvote {
+            align-self: center;
+        }
+
+            .fa-sort-up {
+                font-size: 18px;
+            }
+            .fa-sort-down {
+                font-size: 14px;
+                color: var(--color-gray);
+            }
 
         .card-question {
             width: 84%;
