@@ -74,6 +74,10 @@ a {
     margin-top: 20px;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
     overflow: hidden;
