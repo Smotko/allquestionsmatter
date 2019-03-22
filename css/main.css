@@ -12,7 +12,6 @@
     --color-bright: #F6F1E8;
     --font-std: 'Montserrat', sans-serif;
     --shadow-std: 0px 0px 2px rgba(107, 78, 48, 0.2);
-    --icon-search: 
 }
 
 /* ===== SETTINGS ===== */
@@ -36,7 +35,8 @@ a {
 /* ===== COMPONENTS ===== */
 .container {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 .circle {
@@ -64,6 +64,30 @@ a {
     padding-bottom: 0.8rem;
     font-size: 1.3rem;
 }
+
+.btn-container {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+    .btn-std {
+        background-color: var(--color-dark-variation);
+        color: var(--color-bright);
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+        border: none;
+        padding: 15px;
+        box-shadow: 1px 1px 2px rgba(107, 78, 48, 0.2);
+        border-radius: 7px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-std:hover {
+        background-color: var(--color-dark);
+        color: var(--color-bright);
+    }
 
 /* ===== STATES ===== */
 .hidden {
@@ -192,6 +216,22 @@ a {
     margin-left: 8px;
 }
 
+.card-container-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-error {
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+}
+
 .card {
     background-color: var(--color-white);
     border-radius: 7px;
@@ -239,6 +279,11 @@ a {
             width: 84%;
         }
 
+.card-error > .fas {
+    font-size: 50px;
+    color: rgba(128, 128, 128, 0.15);
+}
+
 /* ===== FORM ===== */
 .form .title {
     color: var(--color-dark-variation);
@@ -279,4 +324,53 @@ a {
     .form-btn:hover {
         background-color: var(--color-dark-variation);
         color: var(--color-bright);
+    }
+
+/* ===== QUESTION NOT FOUND ===== */
+/* 
+<div class="not-found">
+<div class="warning-card">
+    <div class="alert-icon"><i class="fas fa-exclamation-circle"></i></div>
+    <p class="alert-message">Ops! Mi dispiace!</p>
+</div>
+<div class="alert-footer">
+    <p>Vuoi fare un'altra domanda?</p>
+</div>
+<div class="btn-container">
+    <div class="btn-std">Chiedere</div>
+</div>
+</div>
+ */
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning-card {
+    background-color: var(--color-white);
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    box-shadow: var(--shadow-std);
+    border-radius: 7px;
+}
+
+    .alert-icon {
+        width: 100%;
+        text-align: center;
+        padding-top: 3rem;
+        font-size: 5rem;
+        color: rgba(128, 128, 128, 0.15);
+    }
+
+    .alert-message {
+        padding-bottom: 2rem;
+        color: var(--color-gray);
+    }
+
+    .alert-footer {
+        margin-top: 1rem;
     }
