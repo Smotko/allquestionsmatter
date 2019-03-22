@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
+:root {
+    --color-black: #000000;
+    --color-gray: #808080;
+    --color-white: #FFFFFF;
+    --color-red: #FF0000;
+    --color-green: #006600;
+    --color-dark: #6B4E30;
+    --color-dark-variation: #B88E64;
+    --color-bright: #F6F1E8;
+    --font-reg: 'Montserrat:400', sans-serif;
+    --font-med: 'Montserrat:500', sans-serif;
+    --font-semi: 'Montserrat:600', sans-serif;
+    --font-bold: 'Montserrat:700', sans-serif;
+}
