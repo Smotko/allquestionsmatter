@@ -22,5 +22,6 @@ urlpatterns = [
     path("question/<int:question_id>", views.list_question),
     path("<str:language_type>/question/", views.post_question),
     path("<str:language_type>/questions/", views.list_questions),
+    path("<str:language_type>/answer/<int:question_id>", views.post_answer),
     path("", views.index),
 ]

@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import redirect, render
 from django.utils import translation
-from index.models import Question, Language
+from index.models import Question, Language, Answer
 
 
 def index(request):
@@ -52,3 +52,13 @@ def post_question(request, language_type):
     )
     question.translate()
     return redirect(f"/question/{question.pk}")
+
+
+def post_answer(request, language_type, question_id):
+    if request.method != "POST":
+        return HttpResponse("Not ok", status=400)
+    answer = Answer.objects.create(
+        content=request.POST["content"], question_id=question_id
+    )
+    answer.translate()
+    return redirect(f"/question/{question_id}")

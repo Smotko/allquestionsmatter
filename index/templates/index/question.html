@@ -10,13 +10,20 @@
         <ul>
             {% for translation in question.translations.all %}
             <li>
-                <h4>{{translation.title}}</h4>
+                <h4><a href="/question/{{translation.id}}">{{translation.title}}</a></h4>
                 <p>{{translation.content}}</p>
             </li>
             {% endfor %}
         </ul>
         <h3>{% trans "Answers" %}</h3>
-        <a href="/answer/">+ {% trans "Answer" %}</a>
+        {% for answer in question.answers.all %}
+            <p>{{answer.content}}</p>
+        {% endfor %}
+        <form action="/{{question.language_id}}/answer/{{question.pk}}" method="post">
+            {% csrf_token %}
+            <textarea name="content"></textarea>
+            <input type="submit">
+        </form>
     </div>
 </div>
 {% endblock %}

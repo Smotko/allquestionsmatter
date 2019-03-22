@@ -81,10 +81,16 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(
+        Question, on_delete=models.CASCADE, related_name="answers"
+    )
     content = models.TextField()
     original = models.ForeignKey(
-        "self", on_delete=models.CASCADE, blank=True, null=True
+        "self",
+        on_delete=models.CASCADE,
+        related_name="translations",
+        blank=True,
+        null=True,
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -93,7 +99,17 @@ class Answer(models.Model):
     reports = models.ManyToManyField("Report", through="AnswerReport", blank=True)
 
     def __str__(self):
-        return f"{self.question}"
+        return f"Answer for {self.pk}: {self.question}"
+
+    def translate(self):
+        translate_client = get_translate_client()
+        for question in self.question.translations.all():
+            target = question.language_id
+            translation = translate_client.translate(
+                self.content, target_language=target
+            )
+            content = translation["translatedText"]
+            Answer.objects.create(content=content, original=self, question=question)
 
 
 class QuestionVote(models.Model):
