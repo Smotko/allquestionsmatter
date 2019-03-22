@@ -1,10 +1,15 @@
 {% extends "index/layout.html" %}
 {% block content %}
 
-<ul>
-    {% for language in languages %}
-    <li><a href="{{language.type}}/questions/">{{language.help_me}}</a></li>
-    {% endfor%}
-</ul>
+
+<div class="main">
+    <div class="container">
+        <ul class="lang-list">
+            {% for language in languages %}
+                <li class="list-item"><a href="{{language.type}}/questions/">{{language.help_me}}</a></li>
+            {% endfor%}
+        </ul>
+    </div>
+</div>
 
 {% endblock %}
