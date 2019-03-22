@@ -78,6 +78,10 @@ a {
     font-weight: bold;
 }
 
+.text-semi-bold {
+    font-weight: 600;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
     overflow: hidden;
@@ -235,3 +239,44 @@ a {
             width: 84%;
         }
 
+/* ===== FORM ===== */
+.form .title {
+    color: var(--color-dark-variation);
+}
+
+.form-group {
+    margin-left: 10px;
+    width: 90%;
+    font-size: 14px;
+}
+
+    .input-field {
+        width: 100%;
+        height: 80px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        font-size: 12px;
+    }
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+    .form-btn {
+        background-color: var(--color-dark);
+        color: var(--color-bright);
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+        border: none;
+        padding: 15px;
+        box-shadow: 1px 1px 2px rgba(107, 78, 48, 0.2);
+        border-radius: 7px;
+        transition: background-color 0.3s;
+    }
+
+    .form-btn:hover {
+        background-color: var(--color-dark-variation);
+        color: var(--color-bright);
+    }
