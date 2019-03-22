@@ -1,12 +1,14 @@
 {% extends "index/layout.html" %}
 {% block content %}
-<ul>
-    {% for question in questions %}
-        <li>
-            <a href="/question/{{ question.pk }}">{{ question.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
+<div>
+    <ul>
+        {% for question in questions %}
+            <li>
+                <a href="/question/{{ question.pk }}">{{ question.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 
-<a href="/{{language_type}}/question">+</a>
+    <a href="/{{language_type}}/question">+ Question</a>
+</div>
 {% endblock content %}

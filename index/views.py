@@ -35,4 +35,4 @@ def post_question(request, language_type):
         language_id=language_type,
     )
     question.translate()
-    return redirect(f"/{language_type}/questions")
+    return redirect(f"/question/{question.pk}")
