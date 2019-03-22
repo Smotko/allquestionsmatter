@@ -19,6 +19,7 @@ psycopg2 = "*"
 django = "*"
 gunicorn = "*"
 django-heroku = "*"
+google-cloud-translate = "*"
 
 [requires]
 python_version = "3.7"

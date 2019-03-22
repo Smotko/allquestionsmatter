@@ -1,0 +1,10 @@
+{% extends "index/layout.html" %}
+{% block content %}
+<ul>
+    {% for question in questions %}
+        <li>
+            <a href="/question/{{ question.pk }}">{{ question.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

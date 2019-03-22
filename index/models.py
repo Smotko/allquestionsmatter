@@ -1,10 +1,12 @@
 from django.db import models
 from django.conf import settings
+from index.google_translate import get_translate_client
 
 
 class Language(models.Model):
     type = models.CharField(primary_key=True, max_length=255)
     name = models.TextField()
+    help_me = models.TextField(default="Help me")
     description = models.TextField(blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -44,7 +46,11 @@ class Question(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     answered = models.BooleanField(default=False)
     original = models.ForeignKey(
-        "self", on_delete=models.CASCADE, blank=True, null=True
+        "self",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="translations",
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -55,6 +61,23 @@ class Question(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+    def translate(self):
+        translate_client = get_translate_client()
+        target = "pt"
+        separator = "++++++++++++++"
+
+        translation = translate_client.translate(
+            f"{self.title}{separator}{self.content}", target_language=target
+        )
+        title, content = translation["translatedText"].split(separator)
+        Question.objects.create(
+            title=title,
+            content=content,
+            user=self.user,
+            language_id="pt",
+            original=self,
+        )
 
 
 class Answer(models.Model):

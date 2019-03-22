@@ -1,6 +1,10 @@
-<html>
-<title></title>
-<body>
-<h1>Rooted</h1>
-</body>
-</html>
+{% extends "index/layout.html" %}
+{% block content %}
+
+<ul>
+    {% for language in languages %}
+    <li><a href="{{language.type}}/questions/">{{language.help_me}}</a></li>
+    {% endfor%}
+</ul>
+
+{% endblock %}
