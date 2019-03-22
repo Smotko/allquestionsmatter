@@ -20,24 +20,24 @@ msgstr ""
 
 #: index/templates/index/question.html:18
 msgid "Answers"
-msgstr ""
+msgstr "Cevaplar"
 
 #: index/templates/index/question.html:19
 msgid "Answer"
-msgstr ""
+msgstr "Cevap"
 
 #: index/templates/index/question_form.html:8
 msgid "Question title"
-msgstr ""
+msgstr "Soru başlığı"
 
 #: index/templates/index/question_form.html:9
 msgid "Question content"
-msgstr ""
+msgstr "Soru içeriği"
 
 #: index/templates/index/questions.html:6
 msgid "Top 5 Questions"
-msgstr ""
+msgstr "En İyi 5 Soru"
 
 #: index/templates/index/questions.html:30
 msgid "Question"
-msgstr ""
+msgstr "Soru"
