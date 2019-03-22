@@ -30,6 +30,27 @@
     </div>
 </div>
 <div class="main">
+    <script>
+    document.getElementById("search").addEventListener("click", function () {
+        const el_style = document.getElementById("search-bar").style;
+        console.log(el_style.display)
+        if (el_style.display === "none") {
+            el_style.display = ""
+        } else {
+            el_style.display = "none";
+        }
+    });
+    </script>
+
+
+    <div class="search-bar" style="display:none" id="search-bar">
+        <a href="#" class="placeholder">search</a>
+        <div class="categories">
+            <p class="placeholder">All</p>
+            <i class="fas fa-sort-down"></i>
+        </div>
+    </div>
+
     {% block content %}{% endblock %}
 </div>
 </body>

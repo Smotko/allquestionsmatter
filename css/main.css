@@ -58,7 +58,6 @@ a {
     }
 
 .title {
-    margin-top: 85px;
     margin-left: 15px;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
@@ -131,6 +130,7 @@ a {
     box-shadow: var(--shadow-std);
     margin-left: 8px;
     justify-content: space-between;
+    margin-top: 85px;
 }
 
     .search-bar .placeholder {
@@ -163,12 +163,13 @@ a {
 
 /* ===== MAIN CONTENT ===== */
 .main {
-    margin-top: 85px;
+    margin-top: 70px;
     width: 100%;
 }
 
     .lang-list {
         width: 100%;
+        margin: 0;
     }
 
         .lang-list .list-item {
