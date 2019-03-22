@@ -20,8 +20,7 @@ from index import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("question/<int:question_id>", views.list_question),
-    path("question/", views.post_question),
-    # path("questions/", views.list_questions),
+    path("<str:language_type>/question/", views.post_question),
     path("<str:language_type>/questions/", views.list_questions),
     path("", views.index),
 ]

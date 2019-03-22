@@ -21,7 +21,7 @@ class TestQuestion(TestCase):
         }
         self.client.login(username="testuser", password="12345")
         response = self.client.post(
-            "/question/",
+            "/en/question/",
             data={"title": "Test", "content": "Hello", "language_type": "en"},
         )
         self.assertTrue(translate_mock.called)
@@ -29,5 +29,5 @@ class TestQuestion(TestCase):
         self.assertEqual(Question.objects.count(), 2)
 
     def test_non_post_400(self):
-        response = self.client.get("/question/")
-        self.assertEqual(response.status_code, 400)
+        response = self.client.get("/en/question/")
+        self.assertEqual(response.status_code, 200)

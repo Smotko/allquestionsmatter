@@ -11,22 +11,28 @@ def index(request):
 
 def list_questions(request, language_type):
     questions = Question.objects.filter(language_id=language_type)
-    return render(request, "index/questions.html", context={"questions": questions})
-
-
-def post_question(request):
-    if request.method != "POST":
-        return HttpResponse("Bad Request", status=400)
-    question = Question.objects.create(
-        title=request.POST["title"],
-        content=request.POST["content"],
-        user=request.user,
-        language_id=request.POST["language_type"],
+    return render(
+        request,
+        "index/questions.html",
+        context={"questions": questions, "language_type": language_type},
     )
-    question.translate()
-    return redirect(index)
 
 
 def list_question(request, question_id):
     question = Question.objects.get(pk=question_id)
     return render(request, "index/question.html", {"question": question})
+
+
+def post_question(request, language_type):
+    if request.method != "POST":
+        return render(
+            request, "index/question_form.html", {"language_type": language_type}
+        )
+    question = Question.objects.create(
+        title=request.POST["title"],
+        content=request.POST["content"],
+        user=request.user,
+        language_id=language_type,
+    )
+    question.translate()
+    return redirect(f"/{language_type}/questions")
