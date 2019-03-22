@@ -2,14 +2,11 @@
 {% block content %}
 
 
-<div class="main">
-    <div class="container">
-        <ul class="lang-list">
-            {% for language in languages %}
-                <li class="list-item"><a href="{{language.type}}/questions/">{{language.help_me}}</a></li>
-            {% endfor%}
-        </ul>
-    </div>
-</div>
+<ul class="lang-list">
+    {% for language in languages %}
+        <li class="list-item"><a href="{{language.type}}/questions/">{{language.help_me}}</a></li>
+    {% endfor%}
+</ul>
+
 
 {% endblock %}
