@@ -1,8 +1,28 @@
 {% extends "index/layout.html" %}
 {% block content %}
 {% load i18n %}
+<script>
+document.getElementById("search").addEventListener("click", function () {
+    const el_style = document.getElementById("search-bar").style;
+    console.log(el_style.display)
+    if (el_style.display === "none") {
+        el_style.display = ""
+    } else {
+        el_style.display = "none";
+    }
+});
+</script>
 
-<h1 class="title">
+
+<div class="search-bar" style="display:none" id="search-bar">
+    <a href="#" class="placeholder">search</a>
+    <div class="categories">
+        <p class="placeholder">All</p>
+        <i class="fas fa-sort-down"></i>
+    </div>
+</div>
+
+<h1 class="title push-up">
     {% trans "Top 5 Questions" %}</h1>
 <ul class="card-container">
     {% for question in questions %}
@@ -16,9 +36,7 @@
                     <p class="downvote">0</p>
                 </div>
                 <div class="card-question">
-                    
-                        <p>{{ question.title }}</p>
-                    
+                    <p>{{ question.title }}</p>
                 </div>
             </div>
         </a>

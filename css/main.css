@@ -122,7 +122,6 @@ a {
 
 /* ===== SEARCH BAR ===== */
 .search-bar {
-    margin-top: 85px;
     position: inherit;
     display: flex;
     width: 90%;
@@ -164,7 +163,7 @@ a {
 
 /* ===== MAIN CONTENT ===== */
 .main {
-    margin-top: 60px;
+    margin-top: 85px;
     width: 100%;
 }
 
