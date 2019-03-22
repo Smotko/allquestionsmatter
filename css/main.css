@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
 
+/* ===== VARIABLES ===== */
 :root {
     --color-black: #000000;
     --color-gray: #808080;
@@ -9,8 +10,154 @@
     --color-dark: #6B4E30;
     --color-dark-variation: #B88E64;
     --color-bright: #F6F1E8;
-    --font-reg: 'Montserrat:400', sans-serif;
-    --font-med: 'Montserrat:500', sans-serif;
-    --font-semi: 'Montserrat:600', sans-serif;
-    --font-bold: 'Montserrat:700', sans-serif;
+    --font-std: 'Montserrat', sans-serif;
+    --shadow-std: 0px 0px 2px rgba(107, 78, 48, 0.2);
+    --icon-search: 
 }
+
+/* ===== SETTINGS ===== */
+html {
+    font-size: 16px;
+    font-family: var(--font-std);
+    color: var(--color-black);
+    background-color: var(--color-bright);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+/* ===== COMPONENTS ===== */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    height: 18px;
+    width: 18px;
+    background-color: var(--color-green);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+    .circle-left {
+        background-color: var(--color-red);
+        margin-left: 2px;
+    }
+    .circle-right {
+        background-color: var(--color-green);
+        margin-left: 1px;
+        margin-right: 2px;
+    }
+
+.title {
+    margin-top: 85px;
+    margin-left: 15px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+/* ===== STATES ===== */
+.hidden {
+    display: none;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+
+    justify-content: space-between;
+
+    background-color: var(--color-white);
+
+    box-shadow: var(--shadow-std);
+}
+
+    .back {
+        margin-left: 10px;
+    }
+
+    .brand {
+        padding: 20px; 
+        text-transform: uppercase;
+        color: var(--color-dark);
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .container .nav-list {
+        justify-content: space-around;
+        width: 120px;
+        align-items: center;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+        color: var(--color-dark);
+    }
+
+/* ===== MAIN CONTENT ===== */
+.main {
+    margin-top: 60px;
+    width: 100%;
+}
+
+    .lang-list {
+        width: 100%;
+    }
+
+        .lang-list .list-item {
+            border-bottom: 1px solid var(--color-dark);
+            padding: 20px 30px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+            .list-item:hover {
+                background-color: var(--color-dark);
+                color: var(--color-bright);
+                font-weight: 700;
+            }
+
+/* ===== CARDS ===== */
+.card-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--color-white);
+    border-radius: 7px;
+    box-shadow: var(--shadow-std);
+    width: 95%;
+}
+
+    .card-info {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .card-votes {
+            width: 15%;
+        }
+
+        .card-question {
+            width: 84%;
+        }
+
