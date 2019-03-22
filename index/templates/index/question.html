@@ -1,5 +1,6 @@
 {% extends "index/layout.html" %}
 {% block content %}
+{% load i18n %}
 
 <div class="container">
     <div>
@@ -14,8 +15,8 @@
             </li>
             {% endfor %}
         </ul>
-        <h3>Answers</h3>
-        <a href="/answer/">+ Answer</a>
+        <h3>{% trans "Answers" %}</h3>
+        <a href="/answer/">+ {% trans "Answer" %}</a>
     </div>
 </div>
 {% endblock %}

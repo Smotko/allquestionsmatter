@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-22 18:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#: index/templates/index/question.html:18
+msgid "Answers"
+msgstr "Odgovori"
+
+#: index/templates/index/question.html:19
+msgid "Answer"
+msgstr "Odgovor"
+
+#: index/templates/index/question_form.html:8
+msgid "Question title"
+msgstr "Naslov vprašanja"
+
+#: index/templates/index/question_form.html:9
+msgid "Question content"
+msgstr "Vsebina vprašanja"
+
+#: index/templates/index/questions.html:6
+msgid "Top 5 Questions"
+msgstr "Top 5 Vprašanj"
+
+#: index/templates/index/questions.html:30
+msgid "Question"
+msgstr "Vprašanje"

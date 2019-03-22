@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import redirect, render
+from django.utils import translation
 from index.models import Question, Language
 
 
@@ -10,6 +11,8 @@ def index(request):
 
 
 def list_questions(request, language_type):
+    translation.activate(language_type)
+    request.session[translation.LANGUAGE_SESSION_KEY] = language_type
     questions = Question.objects.filter(language_id=language_type)
     return render(
         request,

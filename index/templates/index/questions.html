@@ -1,6 +1,9 @@
 {% extends "index/layout.html" %}
 {% block content %}
-<h1 class="title">Top 5 Ricerche</h1>
+{% load i18n %}
+
+<h1 class="title">
+    {% trans "Top 5 Questions" %}</h1>
 <ul class="card-container">
     {% for question in questions %}
     <li class="card">
@@ -23,9 +26,7 @@
     {% endfor %}
 </ul>
 
-
-
 <div>
-    <a href="/{{language_type}}/question">+ Question</a>
+    <a href="/{{language_type}}/question">+ {% trans "Question" %}</a>
 </div>
 {% endblock content %}
