@@ -1,19 +1,21 @@
 {% extends "index/layout.html" %}
 {% block content %}
 
-<div>
-    <h2>{{question.title}}</h2>
-    <p>{{question.content}}</p>
-    <h3>Translations</h3>
-    <ul>
-        {% for translation in question.translations.all %}
-        <li>
-            <h4>{{translation.title}}</h4>
-            <p>{{translation.content}}</p>
-        </li>
-        {% endfor %}
-    </ul>
-    <h3>Answers</h3>
-    <a href="/answer/">+ Answer</a>
+<div class="container">
+    <div>
+        <h2>{{question.title}}</h2>
+        <p>{{question.content}}</p>
+        <h3>Translations</h3>
+        <ul>
+            {% for translation in question.translations.all %}
+            <li>
+                <h4>{{translation.title}}</h4>
+                <p>{{translation.content}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <h3>Answers</h3>
+        <a href="/answer/">+ Answer</a>
+    </div>
 </div>
 {% endblock %}

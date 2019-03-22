@@ -14,19 +14,32 @@ def list_questions(request, language_type):
     return render(
         request,
         "index/questions.html",
-        context={"questions": questions, "language_type": language_type},
+        context={
+            "questions": questions,
+            "language_type": language_type,
+            "back_link": "/",
+        },
     )
 
 
 def list_question(request, question_id):
     question = Question.objects.get(pk=question_id)
-    return render(request, "index/question.html", {"question": question})
+    return render(
+        request,
+        "index/question.html",
+        {"question": question, "back_link": f"/{question.language_id}/questions"},
+    )
 
 
 def post_question(request, language_type):
     if request.method != "POST":
         return render(
-            request, "index/question_form.html", {"language_type": language_type}
+            request,
+            "index/question_form.html",
+            {
+                "language_type": language_type,
+                "back_link": f"/{language_type}/questions",
+            },
         )
     question = Question.objects.create(
         title=request.POST["title"],

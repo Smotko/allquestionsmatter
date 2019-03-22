@@ -13,10 +13,14 @@
 <body>
 <div class="container navbar">
     <div class="container">
-        <div class="icon back hidden">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <a href="/" class="brand">R<span class="circle circle-left"></span><span class="circle circle-right"></span>ted</a>
+        {% if back_link %}
+            <a href="{{back_link}}">
+                <div class="icon back">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+            </a>
+        {% endif %}
+        <a href="{{back_link |default_if_none:"/"}}" class="brand">R<span class="circle circle-left"></span><span class="circle circle-right"></span>ted</a>
     </div>
     <div class="container">
         <ul class="container nav-list">
@@ -26,9 +30,7 @@
     </div>
 </div>
 <div class="main">
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
 </div>
 </body>
 </html>

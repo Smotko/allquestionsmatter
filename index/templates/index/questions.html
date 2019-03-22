@@ -1,14 +1,31 @@
 {% extends "index/layout.html" %}
 {% block content %}
-<div>
-    <ul>
-        {% for question in questions %}
-            <li>
-                <a href="/question/{{ question.pk }}">{{ question.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+<h1 class="title">Top 5 Ricerche</h1>
+<ul class="card-container">
+    {% for question in questions %}
+    <li class="card">
+        <a href="/question/{{ question.pk }}">
+            <div class="card-info">
+                <div class="card-votes">
+                    <p class="upvote">0</p>
+                    <i class="fas fa-sort-up upvote"></i>
+                    <i class="fas fa-sort-down downvote"></i>
+                    <p class="downvote">0</p>
+                </div>
+                <div class="card-question">
+                    
+                        <p>{{ question.title }}</p>
+                    
+                </div>
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
 
+
+
+<div>
     <a href="/{{language_type}}/question">+ Question</a>
 </div>
 {% endblock content %}
