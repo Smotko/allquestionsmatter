@@ -25,7 +25,7 @@
             </div>
         </li>
         {% if question.translations.count %}
-        <li class="card">
+        <li class="card" style="background-color:transparent">
             <div class="card-info">
             {% for translation in question.translations.all %}
                 <a href="/question/{{translation.id}}">{{translation.language_id}}</a>
