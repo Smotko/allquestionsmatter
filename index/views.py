@@ -3,6 +3,7 @@ from django.template import loader
 from django.shortcuts import redirect, render
 from django.utils import translation
 from index.models import Question, Language, Answer
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -44,10 +45,13 @@ def post_question(request, language_type):
                 "back_link": f"/{language_type}/questions",
             },
         )
+    user = request.user
+    if user.is_anonymous:
+        user = User.objects.get(pk=2)
     question = Question.objects.create(
         title=request.POST["title"],
         content=request.POST["content"],
-        user=request.user,
+        user=user,
         language_id=language_type,
     )
     question.translate()
