@@ -3,22 +3,57 @@
 {% load i18n %}
 
 <div class="container">
-    <div>
-        <h2>{{question.title}}</h2>
-        <p>{{question.content}}</p>
-        <h3>Translations</h3>
-        {% for translation in question.translations.all %}
-            <a href="/question/{{translation.id}}">{{translation.language_id}}</a>
-        {% endfor %}
-        <h3>{% trans "Answers" %}</h3>
+    
+    <ul class="card-container">
+        <li class="card">
+            <div class="card-info">
+                <div class="card-votes">
+                    <a href="/question/{{question.pk}}/upvote">
+                        <p class="upvote">{{question.upvotes}}</p>
+                        <i class="fas fa-sort-up upvote"></i>
+                    </a>
+                    <a href="/question/{{question.pk}}/downvote">
+                        <i class="fas fa-sort-down downvote"></i>
+                        <p class="downvote">{{question.downvotes}}</p>
+                    </a>
+                </div>
+                <div class="card-question">
+                    <a href="/question/{{ question.pk }}">
+                        <p>{{ question.title }}</p>
+                    </a>
+                </div>
+            </div>
+        </li>
+        {% if question.translations.count %}
+        <li class="card">
+            <div class="card-info">
+            {% for translation in question.translations.all %}
+                <a href="/question/{{translation.id}}">{{translation.language_id}}</a>
+            {% endfor %}
+            </div>
+        </li>
+        {% endif %}
+        
         {% for answer in question.answers.all %}
-            <p>{{answer.content}}</p>
+            <li class="card answer">
+                <div class="card-info">
+                    <p>{{answer.content}}</p>
+                </div>
+            </li>
         {% endfor %}
-        <form action="/{{question.language_id}}/answer/{{question.pk}}" method="post">
-            {% csrf_token %}
-            <textarea name="content"></textarea>
-            <input type="submit">
-        </form>
+    </ul>
+</div>
+<div>
+    <div class="card-translations">
+        
     </div>
+
+<form action="/{{question.language_id}}/answer/{{question.pk}}" method="post">
+    {% csrf_token %}
+    <div style="padding:10px">
+    <textarea name="content" style="width:100%"></textarea>
+    <input type="submit">
+    </div>
+</form>
 </div>
 {% endblock %}

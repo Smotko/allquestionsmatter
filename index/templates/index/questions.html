@@ -6,30 +6,35 @@
 <ul class="card-container">
     {% for question in questions %}
     <li class="card">
-        
-            <div class="card-info">
-                <div class="card-votes">
-                    <a href="/question/{{question.pk}}/upvote">
-                        <p class="upvote">{{question.upvotes}}</p>
-                        <i class="fas fa-sort-up upvote"></i>
-                    </a>
-                    <a href="/question/{{question.pk}}/downvote">
-                        <i class="fas fa-sort-down downvote"></i>
-                        <p class="downvote">{{question.downvotes}}</p>
-                    </a>
-                </div>
-                <div class="card-question">
-                    <a href="/question/{{ question.pk }}">
-                        <p>{{ question.title }}</p>
-                    </a>
-                </div>
+        <div class="card-info">
+            <div class="card-votes">
+                <a href="/question/{{question.pk}}/upvote">
+                    <p class="upvote">{{question.upvotes}}</p>
+                    <i class="fas fa-sort-up upvote"></i>
+                </a>
+                <a href="/question/{{question.pk}}/downvote">
+                    <i class="fas fa-sort-down downvote"></i>
+                    <p class="downvote">{{question.downvotes}}</p>
+                </a>
             </div>
-
+            <div class="card-question">
+                <a href="/question/{{ question.pk }}">
+                    <p>{{ question.title }}</p>
+                </a>
+            </div>
+        </div>
     </li>
     {% endfor %}
 </ul>
 
-<div>
-    <a href="/{{language_type}}/question">+ {% trans "Question" %}</a>
+
+<div style="padding: 10px;">
+    <form action="/{{language_type}}/question/" method="post">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="{% trans "Question title" %}" style="width:100%"><br>
+        <textarea name="content" placeholder="{% trans "Question content" %}" style="width:100%"></textarea><br>
+        <input type="submit">
+    </form>
 </div>
+
 {% endblock content %}
