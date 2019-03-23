@@ -412,3 +412,12 @@ a {
         margin-right: 20px;
     }
 
+/* ===== COMMENTS PAGE ===== */
+.push-down {
+    margin-top: 90px;
+}
+
+.comments-img {
+    width: 100%;
+    height: auto;
+}

@@ -23,29 +23,32 @@
         </div>
         <div class="container">
             <ul class="container nav-list">
-                <li class="nav-list-item"><a href="#" class="icon"><i class="fas fa-search"></i></a></li>
+                <li class="nav-list-item"><a href="questions-search-bar.html" class="icon"><i class="fas fa-search"></i></a></li>
                 <li class="nav-list-item"><a href="#" class="icon"><i class="fas fa-info-circle"></i></a></li>
             </ul>
         </div>
     </div>
-
     <div class="main">
-        <form action="">
-            <div class="form">
-                <h1 class="title">affito</h1>
-                <div class="form-group">
-                    <label for="question" class="text-semi-bold">Vuoi fare un'altra domanda?</label>
-                    <input type="text" placeholder="Scrivi tua domanda" name="question" class="input-field" required>        
+        <ul class="card-container push-down">
+            <li class="card">
+                <div class="card-info">
+                    <div class="card-votes">
+                        <p class="upvote">52</p>
+                        <i class="fas fa-sort-up upvote"></i>
+                        <i class="fas fa-sort-down downvote"></i>
+                        <p class="downvote">7</p>
+                    </div>
+                    <div class="card-question">
+                        <p>Come faccio a registrarmi nel sistema della sicurezza sociale?</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="context" class="text-semi-bold">En che contesto?</label>
-                    <input type="text" placeholder="Scrivi il contesto" name="context" class="input-field" required>
-                </div>
-                <div class="btn">
-                    <button type="submit" class="form-btn">Aiutami</button>
-                </div>
+            </li>
+        </ul>
+        <div class="comments">
+            <div class="comments-container">
+                <img src="./assets/comments.png" alt="comments" class="comments-img">
             </div>
-        </form>
+        </div>
     </div>
 </body>
 
