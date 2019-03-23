@@ -7,14 +7,9 @@
         <h2>{{question.title}}</h2>
         <p>{{question.content}}</p>
         <h3>Translations</h3>
-        <ul>
-            {% for translation in question.translations.all %}
-            <li>
-                <h4><a href="/question/{{translation.id}}">{{translation.title}}</a></h4>
-                <p>{{translation.content}}</p>
-            </li>
-            {% endfor %}
-        </ul>
+        {% for translation in question.translations.all %}
+            <a href="/question/{{translation.id}}">{{translation.language_id}}</a>
+        {% endfor %}
         <h3>{% trans "Answers" %}</h3>
         {% for answer in question.answers.all %}
             <p>{{answer.content}}</p>
