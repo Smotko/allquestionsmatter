@@ -1,0 +1,31 @@
+{% extends "index/layout.html" %}
+{% block content %}
+
+<div class="main">
+    <form action="">
+        <div class="form signup-form">
+            <div class="centralize">
+                <p class="subtitle">Per favor, per fare una domanda devi <span class="text-highlight">iscriverti</span></p>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="e-mail" name="question" class="input-field input-signup" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="password" name="context" class="input-field input-signup" required>
+            </div>
+            <div class="btn">
+                <button type="submit" class="form-btn">iscriversi</button>
+            </div>
+            <div class="container">
+                <p>o</p>
+            </div>
+            <div class="signup">
+                <div class="signup-link google"><i class="fab fa-google"></i>iscreversi con google</div>
+                <div class="signup-link facebook"><i class="fab fa-facebook-square"></i>iscreversi con facebook</div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
