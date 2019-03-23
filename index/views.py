@@ -2,13 +2,38 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import redirect, render
 from django.utils import translation
-from index.models import Question, Language, Answer
+from index.models import Question, Language, Answer, QuestionVote, Vote
 from django.contrib.auth.models import User
+
+
+def get_user(request):
+    user = request.user
+    if user.is_anonymous:
+        user = User.objects.get(pk=2)
+    return user
 
 
 def index(request):
     languages = Language.objects.all()
     return render(request, "index/index.html", {"languages": languages})
+
+
+def upvote(request, question_id):
+    question = Question.objects.get(pk=question_id)
+    vote(request, question_id, "up")
+    return redirect(f"/{question.language_id}/questions/")
+
+def downvote(request, question_id):
+    question = Question.objects.get(pk=question_id)
+    vote(request, question_id, "down")
+    return redirect(f"/{question.language_id}/questions/")
+
+
+def vote(request, question_id, type):
+    vote_model = Vote.objects.get(type=type)
+    QuestionVote.objects.create(
+        vote=vote_model, question_id=question_id, user=get_user(request)
+    )
 
 
 def list_questions(request, language_type):
@@ -45,13 +70,11 @@ def post_question(request, language_type):
                 "back_link": f"/{language_type}/questions",
             },
         )
-    user = request.user
-    if user.is_anonymous:
-        user = User.objects.get(pk=2)
+
     question = Question.objects.create(
         title=request.POST["title"],
         content=request.POST["content"],
-        user=user,
+        user=get_user(request),
         language_id=language_type,
     )
     question.translate()

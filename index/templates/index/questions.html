@@ -9,10 +9,14 @@
         <a href="/question/{{ question.pk }}">
             <div class="card-info">
                 <div class="card-votes">
-                    <p class="upvote">0</p>
-                    <i class="fas fa-sort-up upvote"></i>
-                    <i class="fas fa-sort-down downvote"></i>
-                    <p class="downvote">0</p>
+                    <a href="/question/{{question.pk}}/upvote">
+                        <p class="upvote">{{question.upvotes}}</p>
+                        <i class="fas fa-sort-up upvote"></i>
+                    </a>
+                    <a href="/question/{{question.pk}}/downvote">
+                        <i class="fas fa-sort-down downvote"></i>
+                        <p class="downvote">{{question.downvotes}}</p>
+                    </a>
                 </div>
                 <div class="card-question">
                     <p>{{ question.title }}</p>

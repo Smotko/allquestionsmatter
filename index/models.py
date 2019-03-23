@@ -59,6 +59,12 @@ class Question(models.Model):
     votes = models.ManyToManyField("Vote", through="QuestionVote", blank=True)
     reports = models.ManyToManyField("Report", through="QuestionReport", blank=True)
 
+    def upvotes(self):
+        return self.votes.filter(type="up").count()
+
+    def downvotes(self):
+        return self.votes.filter(type="down").count()
+
     def __str__(self):
         return f"{self.title}"
 

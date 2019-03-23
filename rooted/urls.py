@@ -19,6 +19,8 @@ from index import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("question/<int:question_id>/upvote", views.upvote),
+    path("question/<int:question_id>/downvote", views.downvote),
     path("question/<int:question_id>", views.list_question),
     path("<str:language_type>/question/", views.post_question),
     path("<str:language_type>/questions/", views.list_questions),
