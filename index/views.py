@@ -6,6 +6,10 @@ from index.models import Question, Language, Answer, QuestionVote, Vote
 from django.contrib.auth.models import User
 
 
+def signup(request):
+    return render(request, "index/signup.html", context={"back_link": "/"})
+
+
 def get_user(request):
     user = request.user
     if user.is_anonymous:
@@ -22,6 +26,7 @@ def upvote(request, question_id):
     question = Question.objects.get(pk=question_id)
     vote(request, question_id, "up")
     return redirect(f"/{question.language_id}/questions/")
+
 
 def downvote(request, question_id):
     question = Question.objects.get(pk=question_id)
