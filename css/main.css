@@ -327,20 +327,6 @@ a {
     }
 
 /* ===== QUESTION NOT FOUND ===== */
-/* 
-<div class="not-found">
-<div class="warning-card">
-    <div class="alert-icon"><i class="fas fa-exclamation-circle"></i></div>
-    <p class="alert-message">Ops! Mi dispiace!</p>
-</div>
-<div class="alert-footer">
-    <p>Vuoi fare un'altra domanda?</p>
-</div>
-<div class="btn-container">
-    <div class="btn-std">Chiedere</div>
-</div>
-</div>
- */
 .not-found {
     display: flex;
     flex-direction: column;
@@ -374,3 +360,55 @@ a {
     .alert-footer {
         margin-top: 1rem;
     }
+
+/* ===== SIGN UP ===== */
+.input-signup {
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: var(--shadow-std);
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.centralize {
+    display: flex;
+}
+
+.subtitle {
+    margin-top: 45px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+    .text-highlight {
+        font-weight: 700;
+        color: var(--color-dark-variation);
+    }
+
+.signup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80px;
+    align-content: space-between;
+}
+
+    .signup-link {
+        width: 70%;
+        border: 1px solid var(--color-dark-variation);
+        padding: 1rem;
+        border-radius: 7px;
+        margin: 10px;
+        text-transform: uppercase;
+        color: var(--color-dark-variation);
+        font-size: 0.7rem;
+    }
+
+    .signup .fab {
+        font-size: 1.2rem;
+        margin-right: 20px;
+    }
+
